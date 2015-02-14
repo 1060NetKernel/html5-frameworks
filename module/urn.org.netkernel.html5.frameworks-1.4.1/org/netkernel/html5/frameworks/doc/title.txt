@@ -1,0 +1,241 @@
+=HTML5 Frameworks=
+
+This module provides a single convenient deployment of common HTML5 web frameworks.
+
+*[#ACE|ACE]
+*[#AngularJS|AngularJS]
+*[#Bootstrap|Bootstrap]
+*[#CanJS|CanJS]
+*[#D3.js|D3.js]
+*[#Font-Awesome|Font-Awesome]
+*[#html5_shiv|html5 shiv]
+*[#JQuery|JQuery]
+*[#Leaflet|Leaflet]
+*[#DataTables|DataTables]
+*[#Foundation|Foundation]
+*[#Prism|Prism]
+*[#Pure|Pure]
+*[#Respond|Respond]
+
+===HTTP Response===
+
+The framework server is dynamically imported into the Frontend Fulcrum.
+
+The [[doc:tpt:http:RESTOverlay|RESTOverlay]] is used to wrap the libraries. It provides the following features for all libraries:
+
+#SHA1 ETags for the served resource for long term 304 negotiation
+#Automatic negotiated resource compression.  This is in addition to existing minification of a given library and provides for ''highly'' efficient network optimisation.  For example, bootstrap.min.css goes from 103kB to 16kB.
+#Each served resource has an HTTP '''EXPIRES''' header one day in the future and '''Cache-Control''' max-age of 86400.
+
+Here is an example of the HTTP response header for a resource from the module...
+{literal}
+Cache-Control	public, max-age=86400
+Content-Encoding	gzip
+Content-Length	42226
+Content-Type	application/x-javascript
+Date	Thu, 28 Feb 2013 12:48:23 GMT
+Etag	"1a59be663dd3695b34e37c3a19663e8170a564ba"
+Expires	Fri, 01 Mar 2013 12:48:23 GMT
+Last-Modified	Thu, 28 Feb 2013 12:48:23 GMT
+Server	NetKernel [NetKernel Enterprise Edition 5.1.1] - Powered by Jetty
+{/literal}
+
+===Latest Convention===
+
+By convention a REST interface containing the word '''latest''' will give a stable alias for the latest
+available implementation of a given technology.
+
+Also specified are versioned interfaces for long-term stability.
+
+For examples see the links below...
+
+==ACE==
+[http://ace.c9.io/|ACE] Code Editor Javascript library
+
+*http://localhost:8080/org/netkernel/html5/framework/ace/latest/src/ace.js
+*http://localhost:8080/org/netkernel/html5/framework/ace/1.1.10/src/ace.js
+*http://localhost:8080/org/netkernel/html5/framework/ace/1.1.10/src-min/ace.js
+*http://localhost:8080/org/netkernel/html5/framework/ace/1.1.10/src-min-noconflict/ace.js
+*http://localhost:8080/org/netkernel/html5/framework/ace/1.1.10/src-noconflict/ace.js
+
+====Demo====
+
+*http://localhost:8080/org/netkernel/html5/framework/ace/demo
+
+==AngularJS==
+[http://angularjs.org/|AngularJS] Javascript library
+
+*http://localhost:8080/org/netkernel/html5/framework/angularjs/latest/angular.min.js
+*http://localhost:8080/org/netkernel/html5/framework/angularjs/1.0.5/angular.min.js
+*http://localhost:8080/org/netkernel/html5/framework/angularjs/1.0.7/angular.min.js
+*http://localhost:8080/org/netkernel/html5/framework/angularjs/1.0.8/angular.min.js
+*http://localhost:8080/org/netkernel/html5/framework/angularjs/1.2.16/angular.min.js
+
+====Demo====
+
+*http://localhost:8080/org/netkernel/html5/framework/angularjs/demo
+
+==Bootstrap==
+
+[http://getbootstrap.com/|Bootstrap] CSS framework
+
+*http://localhost:8080/org/netkernel/html5/framework/bootstrap/latest/css/bootstrap.min.css
+*http://localhost:8080/org/netkernel/html5/framework/bootstrap/2.2.2/css/bootstrap.min.css
+*http://localhost:8080/org/netkernel/html5/framework/bootstrap/2.3.2/css/bootstrap.min.css
+*http://localhost:8080/org/netkernel/html5/framework/bootstrap/3.0.0/css/bootstrap.min.css
+*http://localhost:8080/org/netkernel/html5/framework/bootstrap/3.1.1/css/bootstrap.min.css
+
+====Demo====
+
+*http://localhost:8080/org/netkernel/html5/framework/bootstrap/demo
+
+==CanJS==
+[http://canjs.com/|CanJS] Javascript library
+
+*http://localhost:8080/org/netkernel/html5/framework/canjs/latest/can.jquery.min.js
+*http://localhost:8080/org/netkernel/html5/framework/canjs/1.1.7/can.jquery.min.js
+*http://localhost:8080/org/netkernel/html5/framework/canjs/2.1.0/can.jquery.min.js
+
+====Demo====
+*http://localhost:8080/org/netkernel/html5/framework/canjs/demo
+
+==D3.js==
+
+[http://d3js.org/|D3] Javascript library
+
+*http://localhost:8080/org/netkernel/html5/framework/d3/latest/d3.min.js
+*http://localhost:8080/org/netkernel/html5/framework/d3/v3/d3.min.js
+
+====Demo====
+
+*http://localhost:8080/org/netkernel/html5/framework/d3/demo
+
+==Font-Awesome==
+
+[http://fortawesome.github.com/Font-Awesome/|Font-Awesome] CSS icon library
+
+*http://localhost:8080/org/netkernel/html5/framework/fontawesome/latest/css/font-awesome.min.css
+*http://localhost:8080/org/netkernel/html5/framework/fontawesome/3.0.2/css/font-awesome.min.css
+*http://localhost:8080/org/netkernel/html5/framework/fontawesome/3.2.1/css/font-awesome.min.css
+*http://localhost:8080/org/netkernel/html5/framework/fontawesome/4.1.0/css/font-awesome.min.css
+*http://localhost:8080/org/netkernel/html5/framework/fontawesome/4.3.0/css/font-awesome.min.css
+
+====Demo====
+
+*http://localhost:8080/org/netkernel/html5/framework/fontawesome/demo
+
+==html5 shiv==
+[http://code.google.com/p/html5shiv/|html 5 shiv] HTML5 IE enabling script
+
+*http://localhost:8080/org/netkernel/html5/framework/html5shiv/latest/html5shiv.js
+*http://localhost:8080/org/netkernel/html5/framework/html5shiv/3.6.2/html5shiv.js
+*http://localhost:8080/org/netkernel/html5/framework/html5shiv/3.7.2/html5shiv.js
+
+====Demo====
+
+*for use, check the other demos
+
+==JQuery==
+
+[http://jquery.com/|Jquery] Javascript library
+
+*http://localhost:8080/org/netkernel/html5/framework/jquery/latest/jquery.min.js
+*http://localhost:8080/org/netkernel/html5/framework/jquery/1.9.1/jquery.min.js
+*http://localhost:8080/org/netkernel/html5/framework/jquery/1.10.1/jquery.min.js
+*http://localhost:8080/org/netkernel/html5/framework/jquery/1.10.2/jquery.min.js
+*http://localhost:8080/org/netkernel/html5/framework/jquery/1.11.1/jquery.min.js
+*http://localhost:8080/org/netkernel/html5/framework/jquery/2.0.2/jquery.min.js
+*http://localhost:8080/org/netkernel/html5/framework/jquery/2.0.3/jquery.min.js
+*http://localhost:8080/org/netkernel/html5/framework/jquery/2.1.1/jquery.min.js
+
+Note that the 2.x releases of JQuery no longer support Internet Explorer 6, 7, or 8 !
+
+====Demo====
+*http://localhost:8080/org/netkernel/html5/framework/jquery/demo
+
+==Leaflet==
+
+[http://leafletjs.com/|Leaflet] An Open-Source JavaScript Library for Mobile-Friendly Interactive Maps
+
+*http://localhost:8080/org/netkernel/html5/framework/leaflet/latest/leaflet.js
+*http://localhost:8080/org/netkernel/html5/framework/leaflet/latest/leaflet.css
+*http://localhost:8080/org/netkernel/html5/framework/leaflet/0.7.3/leaflet.js
+*http://localhost:8080/org/netkernel/html5/framework/leaflet/0.7.3/leaflet.css
+
+====Demo====
+*http://localhost:8080/org/netkernel/html5/framework/leaflet/demo
+
+==DataTables==
+
+[http://datatables.net/|DataTables] JQuery Plugin for HTML Tables
+
+*http://localhost:8080/org/netkernel/html5/framework/datatables/latest/js/jquery.dataTables.min.js
+*http://localhost:8080/org/netkernel/html5/framework/datatables/latest/css/jquery.dataTables.css
+*http://localhost:8080/org/netkernel/html5/framework/datatables/1.9.4/js/jquery.dataTables.min.js
+*http://localhost:8080/org/netkernel/html5/framework/datatables/1.9.4/css/jquery.dataTables.css
+*http://localhost:8080/org/netkernel/html5/framework/datatables/1.10.0/js/jquery.dataTables.min.js
+*http://localhost:8080/org/netkernel/html5/framework/datatables/1.10.0/css/jquery.dataTables.css
+
+====Demo====
+*http://localhost:8080/org/netkernel/html5/framework/datatables/demo
+
+==Foundation==
+
+[http://foundation.zurb.com/|Foundation] Frontend Framework
+
+*http://localhost:8080/org/netkernel/html5/framework/foundation/latest/js/foundation.min.js
+*http://localhost:8080/org/netkernel/html5/framework/foundation/latest/css/foundation.css
+*http://localhost:8080/org/netkernel/html5/framework/foundation/4.2.1/js/foundation.min.js
+*http://localhost:8080/org/netkernel/html5/framework/foundation/4.2.1/css/foundation.css
+*http://localhost:8080/org/netkernel/html5/framework/foundation/4.3.1/js/foundation.min.js
+*http://localhost:8080/org/netkernel/html5/framework/foundation/4.3.1/css/foundation.css
+*http://localhost:8080/org/netkernel/html5/framework/foundation/5.2.2/js/foundation.min.js
+*http://localhost:8080/org/netkernel/html5/framework/foundation/5.2.2/css/foundation.css
+
+====Demo====
+*http://localhost:8080/org/netkernel/html5/framework/foundation/demo
+
+==Prism==
+[http://prismjs.com|Prism] Lightweight, robust, elegant syntax highlighting
+
+*Available themes : coy, dark, default, funky, okaidia, twilight
+*http://localhost:8080/org/netkernel/html5/framework/prism/latest/prism-default.js
+*http://localhost:8080/org/netkernel/html5/framework/prism/latest/prism-default.css
+*http://localhost:8080/org/netkernel/html5/framework/prism/1.0.0/prism-default.js
+*http://localhost:8080/org/netkernel/html5/framework/prism/1.0.0/prism-default.css
+
+====Demo====
+*http://localhost:8080/org/netkernel/html5/framework/prism/demo
+
+==Pure==
+[http://purecss.io/|Pure] A set of small, responsive CSS modules that you can use in every web project.
+
+*http://localhost:8080/org/netkernel/html5/framework/pure/latest/pure.min.css
+*http://localhost:8080/org/netkernel/html5/framework/pure/0.4.2/pure.min.css
+
+====Demo====
+*http://localhost:8080/org/netkernel/html5/framework/pure/demo
+
+==Respond==
+[https://github.com/scottjehl/Respond|Respond] A fast & lightweight polyfill for min/max-width CSS3 Media Queries (for IE 6-8, and more)
+
+*http://localhost:8080/org/netkernel/html5/framework/respond/latest/respond.min.js
+*http://localhost:8080/org/netkernel/html5/framework/respond/1.3.0/respond.min.js
+*http://localhost:8080/org/netkernel/html5/framework/respond/1.4.2/respond.min.js
+
+====Demo====
+
+*for use, check the other demos
+
+==Updates==
+
+This module will be stable and will endeavour to preserve legacy versions of libraries.  New releases will be provided
+periodically (with an anticipated twice yearly cycle).
+
+If you need to use a more recent version of a given library and can't wait for an update cycle. Then simply clone this module, rename it for yourself and
+drop the newer library into the resource/framework/ directory.  No other editing should be needed.
+
+==Acknowledgements==
+
+We are grateful to all those that have created and/or contributed to these libraries.  Please see
+[[doc:html5:frameworks:license|licenses]] for individual licensing terms. 

@@ -1,0 +1,16 @@
+<docs>
+	<doc>
+		<id>doc:html5:frameworks:title</id>
+		<title>HTML5 Frameworks</title>
+		<desc>A guide to the HTML5 frameworks module</desc>
+		<uri>res:/org/netkernel/html5/frameworks/doc/title.txt</uri>
+		<keywords/>
+	</doc>
+	<doc>
+		<id>doc:html5:frameworks:license</id>
+		<title>License</title>
+		<desc>Licensing</desc>
+		<uri>res:/org/netkernel/html5/frameworks/doc/license.txt</uri>
+		<keywords/>
+	</doc>
+</docs>

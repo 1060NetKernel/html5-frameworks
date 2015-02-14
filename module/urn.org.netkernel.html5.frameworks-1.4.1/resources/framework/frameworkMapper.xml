@@ -1,0 +1,52 @@
+<config>
+	<!--
+	*****************
+	*HTML5 Frameworks
+	*****************
+	-->
+	<endpoint>
+		<meta>
+			<rest>
+				<simple>org/netkernel/html5/framework/{framework:(.*?)}/latest/{file:(.*?)}</simple>
+				<Etag>SHA1</Etag>
+				<compress/>
+			</rest>
+		</meta>
+		<grammar>res:/org/netkernel/html5/framework/<group name="framework"><regex type="alphanum"/></group>/latest/<group name="file"><regex type="anything"/></group></grammar>
+		<request>
+			<identifier>active:groovy</identifier>
+			<argument name="operator">res:/resources/impl/latest.gy</argument>
+			<argument name="framework">arg:framework</argument>
+			<argument name="file">arg:file</argument>
+		</request>
+		<header name="HTTP_CACHE_EXPIRES_DELTA_SECONDS">86400</header>
+	</endpoint>
+	<endpoint>
+		<meta>
+			<rest>
+				<simple>org/netkernel/html5/framework/{framework:(.*?)}/demo</simple>
+				<Etag>SHA1</Etag>
+				<compress/>
+			</rest>
+		</meta>
+		<grammar>res:/org/netkernel/html5/framework/<group name="framework"><regex type="alphanum"/></group>/demo</grammar>
+		<request>
+			<identifier>res:/resources/demo/[[arg:framework]].html</identifier>
+		</request>
+		<header name="HTTP_CACHE_EXPIRES_DELTA_SECONDS">86400</header>
+	</endpoint>
+	<endpoint>
+		<meta>
+			<rest>
+				<simple>org/netkernel/html5/framework/{file}</simple>
+				<Etag>SHA1</Etag>
+				<compress/>
+			</rest>
+		</meta>
+		<grammar>res:/org/netkernel/html5/framework/<group name="file"><regex type="anything"/></group></grammar>
+		<request>
+			<identifier>res:/resources/framework/[[arg:file]]</identifier>
+		</request>
+		<header name="HTTP_CACHE_EXPIRES_DELTA_SECONDS">86400</header>
+	</endpoint>
+</config>

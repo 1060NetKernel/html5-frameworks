@@ -1,0 +1,17 @@
+<books>
+	<book>
+		<id>book:html5:frameworks:book</id>
+		<title>HTML5 Frameworks</title>
+		<desc>Documentation for the HTML5 Frameworks Module</desc>
+		<author/>
+		<publisher/>
+		<date/>
+		<modified/>
+		<keywords/>
+		<toc>
+			<item id="doc:html5:frameworks:title">
+				<item id="doc:html5:frameworks:license"/>
+			</item>
+		</toc>
+	</book>
+</books>
