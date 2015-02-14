@@ -1,0 +1,7 @@
+framework=context.getThisRequest().getArgumentValue("framework")
+file=context.getThisRequest().getArgumentValue("file")
+latest=context.source("""res:/resources/framework/$framework/latest""", String.class).trim()
+
+//Source the file
+resp=context.sourceForResponse("""res:/resources/framework/$framework/$latest/$file""")
+context.createResponseFrom(resp)

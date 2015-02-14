@@ -1,0 +1,55 @@
+<module version="2.0">
+	<meta>
+		<identity>
+			<uri>urn:org:netkernel:html5:frameworks</uri>
+			<version>1.4.1</version>
+		</identity>
+		<info>
+			<name>HTML5 / Frameworks</name>
+			<description>Utility frameworks for HTML5</description>
+		</info>
+	</meta>
+	<system>
+	</system>
+	<rootspace>
+		<fileset>
+			<regex>res:/etc/system/SimpleDynamicImportHook.xml</regex>
+		</fileset>
+		<overlay>
+			<prototype>RESTOverlay</prototype>
+			<config>
+				<basepath>/</basepath>
+			</config>
+			<space>
+				<mapper>
+					<config>
+						<import>res:/resources/framework/frameworkMapper.xml</import>
+					</config>
+					<space>
+						<fileset>
+							<regex>res:/resources/.*</regex>
+						</fileset>
+						<import>
+							<uri>urn:org:netkernel:lang:groovy</uri>
+						</import>
+						<import>
+		          			<uri>urn:org:netkernel:ext:layer1</uri>
+		        		</import>
+					</space>
+				</mapper>
+			</space>
+		</overlay>
+		<import>
+			<private/>
+			<uri>urn:org:netkernel:tpt:http</uri>
+		</import>
+	</rootspace>
+	<rootspace uri="urn:org:netkernel:html5:frameworks:doc" public="true">
+		<fileset>
+			<regex>res:/etc/system/(Docs|Books).xml</regex>
+		</fileset>
+		<fileset>
+			<regex>res:/org/netkernel/html5/frameworks/doc/.*</regex>
+		</fileset>
+	</rootspace>
+</module>
