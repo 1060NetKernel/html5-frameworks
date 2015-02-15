@@ -34,15 +34,13 @@ var SPARQLHighlightRules = function() {
 
   this.$rules = { start: 
      [ 
-       { token: 'keyword.turtle',
-         regex: '(?:^|\\s+)(?:@base|@prefix)\\b',
-         comment: 'Keywords' },
+       { token: 'string.uri.turtle',
+           regex: '<[^<>"{}|^`\\]\\\\]*>',
+           comment: 'URI' 
+       },
        { token: 'variable.sparql',
          regex: '(?:\\?[A-Za-z]+)',
          comment: 'Variables'},
-       { token: 'string.uri.turtle',
-         regex: '<[^<>"{}|^`\\]\\\\]*>',
-         comment: 'URI' },
        { token: [ 'constant.language.turtle', 'entity.name.class.turtle' ],
          regex: '(_:)([^\\s]+)',
          comment: 'Blank node' },
@@ -101,7 +99,7 @@ var SPARQLHighlightRules = function() {
          token : keywordMapper,
          regex : "[a-zA-Z_$][a-zA-Z0-9_$]*\\b"
        } ] }
-    
+       
     this.normalizeRules();
 };
 
