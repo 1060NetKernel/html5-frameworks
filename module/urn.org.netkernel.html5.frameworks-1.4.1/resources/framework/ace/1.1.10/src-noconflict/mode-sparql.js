@@ -60,26 +60,21 @@ var SPARQLHighlightRules = function() {
          token : "paren.rparen",
          regex : "[\\)\\}]"
        },
-       { token: 
-          [ 'string.turtle',
-            'string.turtle',
-            'string.turtle',
-            'keyword.operator.turtle',
-            'string.turtle',
-            'string.turtle',
-            'string.turtle',
-            'string.turtle',
-            'string.turtle',
-            'string.turtle',
-            'string.turtle',
-            'support.type.turtle' ],
-         regex: '(?:(\'\'\')(?:(?:\'|\'\')?(?:[^\'\\\\]|\\\\[tbnrf\\"\']))*(\'\'\')|(""")(?:(?:"|"")?([^"\\\\]|\\\\[tbnrf\\"\']))*(""")|(\')(?:[^\\x22\\x5C\\xA\\xD]|\\\\[tbnrf\\"\'])*(\')|(")(?:[^\\x22\\x5C\\xA\\xD]|\\\\[tbnrf\\"\'])*(")|(\'\'\'.*\'\'\')|(\'[^\']*\'))((?:@[a-zA-Z-]+)?)',
-         comment: 'String literal' 
+       {
+           token : "string",
+           regex : '"""',
+           next  : "qqstring"
+       }, {
+           token : "string", // single line
+           regex : '["](?:(?:\\\\.)|(?:[^"\\\\]))*?["]'
+       }, {
+           token : "string", // single line
+           regex : "['](?:(?:\\\\.)|(?:[^'\\\\]))*?[']"
        },
        {
-         token : "string.turtle",
-         regex : '["](?:(?:\\\\.)|(?:[^"\\\\]))*?["]',
-         comment: 'String literal'
+           token : "support.type.turtle",
+           regex : '@[a-zA-Z]+(?:-[a-zA-Z0-9]+)*',
+           comment : 'Language specifier'
        },
        { token: [ 'constant.other.turtle', 'entity.name.class.turtle' ],
          regex: '(\\w*:)([^\\s|/^*?+{}()]*)',
@@ -98,7 +93,26 @@ var SPARQLHighlightRules = function() {
        {
          token : keywordMapper,
          regex : "[a-zA-Z_$][a-zA-Z0-9_$]*\\b"
-       } ] }
+       } ],
+        "qqstring" : [
+            {
+                token : "constant.language.escape",
+                regex : /\\(?:u[0-9A-Fa-f]{4}|.|$)/
+            }, {
+                token : "constant.language.escape",
+                regex : /\$[\w\d]+/
+            }, {
+                token : "constant.language.escape",
+                regex : /\$\{[^"\}]+\}?/
+            }, {
+                token : "string",
+                regex : '"{3,5}',
+                next : "start"
+            }, {
+                token : "string",
+                regex : '.+?'
+            }
+        ] }
        
     this.normalizeRules();
 };
