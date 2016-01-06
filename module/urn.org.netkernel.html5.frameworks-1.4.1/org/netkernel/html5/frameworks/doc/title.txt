@@ -84,6 +84,7 @@ For examples see the links below...
 *http://localhost:8080/org/netkernel/html5/framework/bootstrap/2.3.2/css/bootstrap.min.css
 *http://localhost:8080/org/netkernel/html5/framework/bootstrap/3.0.0/css/bootstrap.min.css
 *http://localhost:8080/org/netkernel/html5/framework/bootstrap/3.1.1/css/bootstrap.min.css
+*http://localhost:8080/org/netkernel/html5/framework/bootstrap/3.3.6/css/bootstrap.min.css
 
 ====Demo====
 
@@ -119,6 +120,7 @@ For examples see the links below...
 *http://localhost:8080/org/netkernel/html5/framework/fontawesome/3.2.1/css/font-awesome.min.css
 *http://localhost:8080/org/netkernel/html5/framework/fontawesome/4.1.0/css/font-awesome.min.css
 *http://localhost:8080/org/netkernel/html5/framework/fontawesome/4.3.0/css/font-awesome.min.css
+*http://localhost:8080/org/netkernel/html5/framework/fontawesome/4.5.0/css/font-awesome.min.css
 
 ====Demo====
 
