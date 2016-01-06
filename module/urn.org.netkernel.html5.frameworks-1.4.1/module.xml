@@ -44,6 +44,7 @@
 			<uri>urn:org:netkernel:tpt:http</uri>
 		</import>
 	</rootspace>
+
 	<rootspace uri="urn:org:netkernel:html5:frameworks:doc" public="true">
 		<fileset>
 			<regex>res:/etc/system/(Docs|Books).xml</regex>
@@ -52,4 +53,5 @@
 			<regex>res:/org/netkernel/html5/frameworks/doc/.*</regex>
 		</fileset>
 	</rootspace>
+
 </module>
